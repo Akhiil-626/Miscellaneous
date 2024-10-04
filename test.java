@@ -27,8 +27,10 @@ class test{
                     }
                 }
                 else if(ch==2){
-                    JOptionPane.showConfirmDialog(null,"Do you want to quit:","~Quit~",JOptionPane.YES_NO_CANCEL_OPTION);
-                    break;
+                    int a = JOptionPane.showConfirmDialog(null,"Do you want to quit:","~Quit~",JOptionPane.YES_NO_CANCEL_OPTION);
+                    if(a==0){
+                        break;
+                    }
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Invalid choice","Oopss...Error", JOptionPane.CANCEL_OPTION);
