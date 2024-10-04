@@ -6,9 +6,9 @@ class test{
     {
         Random r = new Random();
 
-        String s = JOptionPane.showInputDialog(null,"     WELCOME PLAYER!   \n\nDo you want to play (y/n) ?!","Game Stop", JOptionPane.INFORMATION_MESSAGE);
+        int s = JOptionPane.showConfirmDialog(null,"     WELCOME PLAYER!   \n    Do you want to play ?!","Game Stop", JOptionPane.YES_NO_CANCEL_OPTION);
 
-        if(s.equalsIgnoreCase("y")){
+        if(s==0){
             while(true){
                 int ch = Integer.parseInt(JOptionPane.showInputDialog(null,"1. Guess the Number\n2.Exit\n\n Enter your choice : ","|| Main menu ||",JOptionPane.INFORMATION_MESSAGE));
 
@@ -20,7 +20,7 @@ class test{
                     }
                     int number = r.ints(1,2).findFirst().getAsInt();
                     if(number == n){
-                        JOptionPane.showMessageDialog(null,"You are the Winner","~Lucky Day!~",JOptionPane.CLOSED_OPTION);
+                        JOptionPane.showMessageDialog(null," You are the Winner "," ~Lucky Day!~ ",JOptionPane.CLOSED_OPTION);
                     }
                     else{
                         JOptionPane.showMessageDialog(null,"Try Again! Loser !","Not Your Luck Day!",JOptionPane.OK_OPTION);
@@ -29,6 +29,7 @@ class test{
                 else if(ch==2){
                     int a = JOptionPane.showConfirmDialog(null,"Do you want to quit:","~Quit~",JOptionPane.YES_NO_CANCEL_OPTION);
                     if(a==0){
+                        JOptionPane.showMessageDialog(null, "Player Exit...","Exit",JOptionPane.CLOSED_OPTION);
                         break;
                     }
                 }
